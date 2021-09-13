@@ -32,8 +32,8 @@ const addToCart = price => {
   document.getElementById("total-Products").innerText = count;
 }
 const getPrice = id => {
-  const priceText = document.getElementById(id).innerText;
-  const converted = parseFloat(priceText);  
+  const priceInString = document.getElementById(id).innerText;
+  const converted = parseFloat(priceInString);  
   return converted;
 }
 // main price update function
