@@ -15,15 +15,16 @@ const showProducts = products => {
       <h6>${product.title}</h6>
       <p>Category: ${product.category}</p>
       <h4>Price: $ ${product.price}</h4>
-      <p class="mb-0">Ratings: ${product.rating.rate} </p>
-      <p id="stars">Reviews: ${product.rating.count}</p>
-      <button onclick="addToCart(${product.price})" id="addToCart-btn" class="buy-now btn btn-primary">add to cart</button>
-      <button id="details-btn" class="btn btn-info text-white">Details</button>
+      <p class="mb-0">Ratings: ${product.rating.rate}</p>
+      <p>Reviews: ${product.rating.count}</p>
+      <button onclick="addToCart(${product.price})" id="addToCart-btn" class="btn btn-outline-primary">add to cart</button>
+      <button id="details-btn" class="btn btn-outline-primary ">Details</button>
      </div>
       `;
     document.getElementById("all-products").appendChild(div);
   }
 }
+
 let count = 0;  //product count in my-cart
 const addToCart = price => {
   count = count + 1;
