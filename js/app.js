@@ -13,23 +13,25 @@ const showProducts = (products) => {
     div.classList.add("product");
     div.innerHTML = `<div class="single-product">
       <div>
-    <img class="product-image" src=${product.image} width="250px" height="250px">
+    <img class="product-image mb-2" src=${product.image}>
       </div>
-      <h5>${product.title}</h5>
+      <h6>${product.title}</h6>
       <p>Category: ${product.category}</p>
       <h4>Price: $ ${product.price}</h4>
-      <button onclick="addToCart(${product.id},${product.price})" id="addToCart-btn" class="buy-now btn btn-success">add to cart</button>
-      <button id="details-btn" class="btn btn-danger">Details</button></div>
+      <p class="mb-0">Average Rating: ${product.rating.rate} </p>
+      <p>Rated Person: ${product.rating.count}</p>
+      <button onclick="addToCart(${product.price})" id="addToCart-btn" class="buy-now btn btn-primary">add to cart</button>
+      <button id="details-btn" class="btn btn-info text-white">Details</button>
+     </div>
       `;
     document.getElementById("all-products").appendChild(div);
   }
 };
+
 let count = 0;
-const addToCart = (id, price) => {
+const addToCart = price => {
   count = count + 1;
   updatePrice("price", price); 
-  // updatePrice(id, price); //changed
-
   updateTaxAndCharge();
   document.getElementById("total-Products").innerText = count;
 };
