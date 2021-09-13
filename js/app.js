@@ -31,6 +31,7 @@ const addToCart = price => {
   updateTaxAndCharge();
   document.getElementById("total-Products").innerText = count;
 }
+// get price function
 const getPrice = id => {
   const priceInString = document.getElementById(id).innerText;
   const converted = parseFloat(priceInString);  
